@@ -1,0 +1,25 @@
+<div class=" container">
+  <div class="row">
+    <div class="m-3 col-12">
+
+      <input class="form-contorl"
+      placeholder="Add new task"
+      [(ngModel)] = "listItem"
+      >
+      
+      <button class=" m-3 btn btn-success" [disabled] = "listItem===''" (click)="onAddItem()"> 
+        Add Task
+     </button>
+    </div>
+    <div class="col-8 item-border " *ngFor="let item of list; let i =index">
+        <input type="radio" class=" ml-3 " id="{{i}}" value="HTML" (click) = "appendItem($event)">
+        <label for="{{i}}" class="mr-5 P-5 ml-3  item-alignment" (click) = "appendItem($event)">{{item}}</label>
+    </div>
+    <div class="col-6">
+      <button class=" m-3 btn btn-danger"  (click)="removeItems()"> 
+        Clear Tasks
+     </button>
+    </div>
+  </div>
+
+</div>
